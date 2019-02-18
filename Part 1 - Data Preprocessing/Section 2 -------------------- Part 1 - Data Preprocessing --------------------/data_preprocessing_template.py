@@ -30,3 +30,19 @@ axis
 if axis = 0 then input along columns
 if axis = 1 then input along lines
 '''
+
+#Encoding Categorical Data 
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+labelencoder_X = LabelEncoder() # Make an object of LabelEncoder
+X[:,0] = labelencoder_X.fit_transform(X[:,0]) # Assign variable X to Encoding the data from column number 0 using method fit_transform()
+# Make a dummy encoding since the column contain 3 values
+onehotencoder = OneHotEncoder(categorical_features = [0]) # Make an object of OneHotEncoder, set column number 0 as a dummy encoder
+X = onehotencoder.fit_transform(X).toarray() # Make a dummy Encoding and make it to array
+
+#Encoding Variable Y
+labelencoder_Y = LabelEncoder() # Make an object of Label Encoder
+Y = labelencoder_Y.fit_transform(Y) # Assign variable Y to Encoding the data from column number 2 using method fit_transform()
+'''
+If the column only contain 2 values, we do not have to make a dummy encoding due to the 
+Machine will know it.
+'''
