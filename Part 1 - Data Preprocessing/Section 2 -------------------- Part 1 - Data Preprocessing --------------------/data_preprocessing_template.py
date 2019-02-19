@@ -46,3 +46,7 @@ Y = labelencoder_Y.fit_transform(Y) # Assign variable Y to Encoding the data fro
 If the column only contain 2 values, we do not have to make a dummy encoding due to the 
 Machine will know it.
 '''
+
+# Splitting the dataset into Trainning set and Testing set
+from sklearn.model_selection import train_test_split # a library for splitting a dataset
+X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size = 0.2, random_state = 0)
