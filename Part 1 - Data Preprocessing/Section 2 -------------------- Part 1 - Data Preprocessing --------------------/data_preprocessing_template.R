@@ -29,3 +29,11 @@ set.seed(123)
 split = sample.split(dataset$Purchased, SplitRatio = 0.8)
 training_set = subset(dataset, split == TRUE)
 test_set = subset(dataset, split == FALSE)
+
+# Feature Scaling
+training_set[, 2:3] = scale(training_set[, 2:3])
+test_set[, 2:3] = scale(test_set[, 2:3])
+#training_set[, 2:3] means we only take the column number 2 and 3
+# due the the scaling in must in numeric
+# colum number 1 and number 4 is still not numeric as we only changed into the categorical as a factor means
+# the origin value type still remembered by the machine
