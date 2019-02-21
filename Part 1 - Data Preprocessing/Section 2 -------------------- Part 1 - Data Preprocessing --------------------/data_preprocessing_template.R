@@ -2,25 +2,7 @@
 
 # Importing Dataset
 dataset = read.csv('Data.csv')
-
-# Taking case of missing data
-# in Age Column
-dataset$Age = ifelse(is.na(dataset$Age),
-                     ave(dataset$Age, FUN = function(x) mean(x, na.rm = TRUE)),
-                     dataset$Age)
-
-# in Salary Column
-dataset$Salary = ifelse(is.na(dataset$Salary),
-                        ave(dataset$Salary, FUN = function(x) mean(x, na.rm = TRUE)),
-                        dataset$Salary)
-
-# Encoding Categorical Data 
-dataset$Country = factor(dataset$Country, 
-                         levels = c('France', 'Spain', 'Germany'),
-                         labels = c(1,2,3))
-dataset$Purchased = factor(dataset$Purchased,
-                           levels = c('Yes', 'No'),
-                           labels = c(0,1))
+# dataset = dataset[, 2:3]
 
 # Splitting the dataset into the Trainning set and Testing set
 # install.packages('caTools')
@@ -31,9 +13,9 @@ training_set = subset(dataset, split == TRUE)
 test_set = subset(dataset, split == FALSE)
 
 # Feature Scaling
-training_set[, 2:3] = scale(training_set[, 2:3])
-test_set[, 2:3] = scale(test_set[, 2:3])
-#training_set[, 2:3] means we only take the column number 2 and 3
-# due the the scaling in must in numeric
-# colum number 1 and number 4 is still not numeric as we only changed into the categorical as a factor means
-# the origin value type still remembered by the machine
+# training_set[, 2:3] = scale(training_set[, 2:3])
+# test_set[, 2:3] = scale(test_set[, 2:3])
+# comment : training_set[, 2:3] means we only take the column number 2 and 3
+# comment : This is comment : due the the scaling in must in numeric
+# comment : colum number 1 and number 4 is still not numeric as we only changed into the categorical as a factor means
+# comment : the origin value type still remembered by the machine
