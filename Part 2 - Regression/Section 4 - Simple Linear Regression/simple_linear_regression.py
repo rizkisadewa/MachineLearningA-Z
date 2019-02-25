@@ -50,3 +50,19 @@ The above will make machine learn from train set and learn the coorelation use a
 
 # Predict the Test set result
 Y_pred = regressor.predict(X_test)
+
+# Visualising the Trainning set results 
+plt.scatter(X_train, Y_train, color='red')
+plt.plot(X_train, regressor.predict(X_train), color = 'blue')
+plt.title('Salary vs Experience (Trainning Set)')
+plt.xlabel('Years of Experience')
+plt.ylabel('Salary')
+plt.show()
+
+# Visualising the Trainning set results 
+plt.scatter(X_test, Y_test, color='red')
+plt.plot(X_train, regressor.predict(X_train), color = 'blue')
+plt.title('Salary vs Experience (Test Set)')
+plt.xlabel('Years of Experience')
+plt.ylabel('Salary')
+plt.show()
