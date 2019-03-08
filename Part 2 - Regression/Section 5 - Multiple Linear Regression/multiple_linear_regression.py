@@ -58,3 +58,10 @@ for the dependent variable vector do not have to be scalled due to the the value
 as category with 2 value "yes" or "no"
 '''
 
+# Fitting Multiple Linear Regression 
+from sklearn.linear_model import LinearRegression
+regressor = LinearRegression()
+regressor.fit(X_train, Y_train) # we fit the independent variable and dependent variable into regressor 
+
+# Predicting the Test set result 
+Y_pred = regressor.predict(X_test)
