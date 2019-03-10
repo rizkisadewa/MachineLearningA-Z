@@ -65,3 +65,7 @@ regressor.fit(X_train, Y_train) # we fit the independent variable and dependent 
 
 # Predicting the Test set result 
 Y_pred = regressor.predict(X_test)
+
+# Building The Optimal Model using Backward Elimination 
+import statsmodels.formula.api as sm
+X = np.append(arr = np.ones((50,1)).astype(int), values=X, axis=1)
