@@ -75,16 +75,16 @@ regressor_OLS = sm.OLS(endog = Y, exog = X_opt).fit()
 regressor_OLS.summary() # to return great table.
 
 # after delete the higher P-value than significant level (0.05)
-X_opt = X[:, [0,1,2,4,5]]
+X_opt = X[:, [0,1,3,4,5]]
 regressor_OLS = sm.OLS(endog = Y, exog = X_opt).fit()
 regressor_OLS.summary() # to return great table.
 
 # after delete the higher P-value than significant level (0.05)
-X_opt = X[:, [0,2,4,5]]
+X_opt = X[:, [0,3,4,5]]
 regressor_OLS = sm.OLS(endog = Y, exog = X_opt).fit()
 regressor_OLS.summary() # to return great table.
 
 # after delete the higher P-value than significant level (0.05)
-X_opt = X[:, [0,4,5]]
+X_opt = X[:, [0,3,5]]
 regressor_OLS = sm.OLS(endog = Y, exog = X_opt).fit()
 regressor_OLS.summary() # to return great table.
