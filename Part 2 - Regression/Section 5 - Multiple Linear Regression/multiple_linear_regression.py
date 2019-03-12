@@ -88,3 +88,8 @@ regressor_OLS.summary() # to return great table.
 X_opt = X[:, [0,3,5]]
 regressor_OLS = sm.OLS(endog = Y, exog = X_opt).fit()
 regressor_OLS.summary() # to return great table.
+
+# after delete the higher P-value than significant level (0.05)
+X_opt = X[:, [0,3]]
+regressor_OLS = sm.OLS(endog = Y, exog = X_opt).fit()
+regressor_OLS.summary() # to return great table.
