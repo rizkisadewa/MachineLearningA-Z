@@ -93,3 +93,4 @@ regressor_OLS.summary() # to return great table.
 X_opt = X[:, [0,3]]
 regressor_OLS = sm.OLS(endog = Y, exog = X_opt).fit()
 regressor_OLS.summary() # to return great table.
+
