@@ -27,3 +27,10 @@ test_set = subset(dataset, split == FALSE)
 # comment : This is comment : due the the scaling in must in numeric
 # comment : colum number 1 and number 4 is still not numeric as we only changed into the categorical as a factor means
 # comment : the origin value type still remembered by the machine
+
+# Fitting Multiple Linear Regression to the Trainset
+# Option 2 : Much simpler
+regressor = lm(formula = Profit ~ R.D.Spend,
+               data = training_set)
+
+
