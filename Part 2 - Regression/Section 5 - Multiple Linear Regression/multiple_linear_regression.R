@@ -33,4 +33,22 @@ test_set = subset(dataset, split == FALSE)
 regressor = lm(formula = Profit ~ R.D.Spend,
                data = training_set)
 
+# Predicting the Test set results
+Y_pred = predict(regressor, newdata = test_set)
+
+# Building predicting optimal model using Backward Elimination 
+regressor = lm(formula = Profit ~ R.D.Spend + Administration + Marketing.Spend + State, 
+               data = dataset)
+summary(regressor)
+regressor = lm(formula = Profit ~ R.D.Spend + Administration + Marketing.Spend, 
+               data = dataset)
+summary(regressor)
+regressor = lm(formula = Profit ~ R.D.Spend + Marketing.Spend, 
+               data = dataset)
+summary(regressor)
+regressor = lm(formula = Profit ~ R.D.Spend, 
+               data = dataset)
+summary(regressor)
+
+
 
