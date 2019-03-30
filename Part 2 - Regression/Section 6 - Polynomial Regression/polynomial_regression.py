@@ -71,3 +71,9 @@ plt.xlabel('Position Level')
 plt.ylabel('Salary')
 plt.show()
 
+# Predict a new result with Linear Regression 
+lin_reg.predict(6.5)
+
+# Predict a new result with Polynomial Regression
+lin_reg2.predict(poly_reg.fit_transform(6.5))
+
