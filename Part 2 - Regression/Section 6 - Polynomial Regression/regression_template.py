@@ -5,7 +5,7 @@ Created on Sat Mar 30 10:20:32 2019
 @author: rizky
 """
 
-# Regression 
+# Regression Template
 
 # Import the Libraries 
 import numpy as np
