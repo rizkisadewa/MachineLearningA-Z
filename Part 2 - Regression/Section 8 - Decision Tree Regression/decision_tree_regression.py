@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Mar 30 10:20:32 2019
+Created on Sun Apr 21 09:36:34 2019
 
 @author: rizky
 """
 
-# Regression Template
+
+# Decision Regression Template
 
 # Import the Libraries 
 import numpy as np
@@ -39,25 +40,20 @@ as category with 2 value "yes" or "no"
 '''
 
 # Fitting the Regression Model to the dataset
-# Create your regressor here
+from sklearn.tree import DecisionTreeRegressor
+regressor = DecisionTreeRegressor(random_state = 0)
+regressor.fit(X, Y)
 
 # Predict a new result
 Y_pred = regressor.predict(6.5)
 
-# Visualising the Regression result 
+# Visualising the Decision Tree Regression results (for higher resolution and smoother curve)
+X_grid = np.arange(min(X), max(X), 0.01)
+X_grid = X_grid.reshape((len(X_grid), 1))
 plt.scatter(X, Y, color='red')
-plt.plot(X, regressor.predict(X), color='blue')
-plt.title('Truth or Bluff (Linear Regression)')
+plt.plot(X_grid, regressor.predict(X_grid), color='blue')
+plt.title('Truth or Bluff (Decision Tree Regression)')
 plt.xlabel('Position Level')
 plt.ylabel('Salary')
 plt.show()
 
-# Visualising the Regression results (for higher resolution and smoother curve)
-X_grid = np.arange(min(X), max(X), 0.1)
-X_grid = X_grid.reshape((len(X_grid), 1))
-plt.scatter(X, Y, color='red')
-plt.plot(X_grid, regressor.predict(X_grid), color='blue')
-plt.title('Truth or Bluff (Linear Regression)')
-plt.xlabel('Position Level')
-plt.ylabel('Salary')
-plt.show()
