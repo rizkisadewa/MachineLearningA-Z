@@ -23,3 +23,7 @@ rules = apriori(transactions, min_support = 0.003, min_confidence = 0.2, min_lif
 
 # Visualising the results
 results = list(rules)
+
+result_list = []
+for i in range(0, len(results)):
+    result_list.append('RULE:\t'+str(results[i][0])+'\nSUPPORT\t'+str(results[i][1])+'\n'+str(results[i][2]))
