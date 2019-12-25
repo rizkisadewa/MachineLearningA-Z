@@ -45,9 +45,6 @@ X = X[:, 1:]
 from sklearn.model_selection import train_test_split # a library for splitting a dataset
 X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size = 0.25, random_state = 0)
 
-'''
-the remark will be updated soon
-'''
 
 # Feature Scaling
 from sklearn.preprocessing import StandardScaler # import class from library
@@ -60,12 +57,6 @@ for the dependent variable vector do not have to be scalled due to the the value
 as category with 2 value "yes" or "no"
 '''
 
-# Fitting Classifier to the Trainning set
-# Create your Classfication
-
-# Predicting the Test set results
-Y_pred = classifier.predict(X_test)
-
 
 # Importing the keras libraries and packages 
 import keras
@@ -73,3 +64,7 @@ from keras.models import Sequential
 from keras.layers import Dense
 
 # Initialising the Ann
+classifier = Sequential()
+
+# Adding the input layer and the first hidden
+classifier.add(output_dim = 6, init='uniform', activation='relu', input_dim = 11)
